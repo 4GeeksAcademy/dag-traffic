@@ -1,42 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export function TrafficLight ({ initialColor }) {
-    const [color, setColor] = useState("initialColor");
-
-    const handleClickRed = () => {
-        setColor("red");
-    };   
-
-    const handleClickYellow = () => {
-        setColor("yellow");
-    };       
-
-    const handleClickGreen = () => {
-        setColor("green");
-    };    
-
-return (
-<div className="w-1/4 h-full bg-white-500 px-2 space-y-5  
-pt-8 pb-8 border-2 border-black bg-blue-100 rounded-lg overflow-hidden  
-text-center relative">
-     <div onClick={handleClickRed} 
-        className={
-                "box-border rounded-full m-auto h-28 w-28 p-4 border-2 border-black m4 "
-                 + (color === "red" ? "bg-red-500" : "bg-red-900")
-            }>
-    </div>   
-    <div onClick={handleClickYellow} 
-        className={
-                "box-border rounded-full m-auto h-28 w-28 p-4 border-2 border-black m4 "
-                 + (color === "yellow" ? "bg-yellow-500" : "bg-yellow-900")
-            }>
-    </div>  
-    <div onClick={handleClickGreen} 
-        className={
-                "box-border rounded-full m-auto h-28 w-28 p-4 border-2 border-black m4 "
-                 + (color === "green" ? "bg-green-500" : "bg-green-900")
-            }>
-    </div>   
-</div>
-)
+export function TrafficLight({ initialColor }) {
+  const [color, setColor] = useState(initialColor);
+  const handleClickRed = () => {
+    setColor("red");
+  };
+  const handleClickYellow = () => {
+    setColor("yellow");
+  };
+  const handleClickGreen = () => {
+    setColor("green");
+  };
+  return (
+    <div className="flex w-full h-screen items-center justify-center bg-red-50">
+      <div className="flex flex-col items-center gap-4 bg-black p-4">
+        <div
+          onClick={handleClickRed}
+          className={
+            "h-20 w-20 rounded-full " +
+            (color === "red" ? "bg-red-500" : "bg-red-900")
+          }
+        ></div>
+        <div
+          onClick={handleClickYellow}
+          className={
+            "h-20 w-20 rounded-full " +
+            (color === "yellow" ? "bg-yellow-500" : "bg-yellow-900")
+          }
+        ></div>
+        <div
+          onClick={handleClickGreen}
+          className={
+            "h-20 w-20 rounded-full " +
+            (color === "green" ? "bg-green-500" : "bg-green-900")
+          }
+        ></div>
+      </div>
+    </div>
+  );
 }
